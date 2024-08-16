@@ -1,0 +1,17 @@
+{:paths ["src"]
+ :deps  {org.jitsi/ice4j {:mvn/version "3.0-70-gb2c8f4d"}
+         persistent-sorted-set/persistent-sorted-set {:mvn/version "0.3.0"}
+         clojure-watch/clojure-watch {:mvn/version "0.1.14"}
+         mvxcvi/arrangement {:mvn/version "2.1.0"}
+         com.github.HumbleUI/HumbleUI {:git/sha "671dd4507e62312dbd1c7363038915f4ed57ecf0"}}
+
+
+ :aliases {:dev {;; for disabling the official compiler
+                 :extra-paths ["dev"]
+                 :classpath-overrides {org.clojure/clojure nil}
+                 :extra-deps {com.github.flow-storm/clojure {:mvn/version "1.11.3-2"}
+                              com.github.flow-storm/flow-storm-dbg {:mvn/version "3.17.0"}
+                              criterium/criterium {:mvn/version "0.4.6"}
+                              io.github.tonsky/clj-reload {:mvn/version "0.7.0"}}
+                 :jvm-opts ["-Dclojure.storm.instrumentEnable=true"
+                            "-Dclojure.storm.instrumentOnlyPrefixes=oblique."]}}}
